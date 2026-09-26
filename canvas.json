@@ -1,0 +1,268 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "About-Desktop.dc.html": {
+      "h": 2630,
+      "is_interactive": true,
+      "page": "about",
+      "title": "About · Desktop 1440",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "About-Mobile.dc.html": {
+      "h": 4090,
+      "is_interactive": true,
+      "page": "about",
+      "title": "About · Mobile 390",
+      "w": 390,
+      "x": 2434,
+      "y": 0
+    },
+    "About-Tablet.dc.html": {
+      "h": 2740,
+      "is_interactive": true,
+      "page": "about",
+      "title": "About · Tablet 834",
+      "w": 834,
+      "x": 1520,
+      "y": 0
+    },
+    "Contact-Desktop.dc.html": {
+      "h": 2200,
+      "is_interactive": true,
+      "page": "contact",
+      "title": "Contact · Desktop 1440",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Contact-Mobile.dc.html": {
+      "h": 3800,
+      "is_interactive": true,
+      "page": "contact",
+      "title": "Contact · Mobile 390",
+      "w": 390,
+      "x": 2434,
+      "y": 0
+    },
+    "Contact-Tablet.dc.html": {
+      "h": 2740,
+      "is_interactive": true,
+      "page": "contact",
+      "title": "Contact · Tablet 834",
+      "w": 834,
+      "x": 1520,
+      "y": 0
+    },
+    "Deals-Desktop.dc.html": {
+      "h": 2800,
+      "is_interactive": true,
+      "page": "deals",
+      "title": "Deals · Desktop 1440",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Deals-Mobile.dc.html": {
+      "h": 4870,
+      "is_interactive": true,
+      "page": "deals",
+      "title": "Deals · Mobile 390",
+      "w": 390,
+      "x": 2434,
+      "y": 0
+    },
+    "Deals-Tablet.dc.html": {
+      "h": 3990,
+      "is_interactive": true,
+      "page": "deals",
+      "title": "Deals · Tablet 834",
+      "w": 834,
+      "x": 1520,
+      "y": 0
+    },
+    "Footer.dc.html": {
+      "h": 477,
+      "page": "parts",
+      "title": "Footer component",
+      "w": 1440,
+      "x": 0,
+      "y": 231
+    },
+    "Header.dc.html": {
+      "h": 111,
+      "page": "parts",
+      "title": "Header component",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Home-Mobile.dc.html": {
+      "h": 8000,
+      "is_interactive": true,
+      "page": "home",
+      "title": "Home · Mobile 390",
+      "w": 390,
+      "x": 2434,
+      "y": 0
+    },
+    "Home-Tablet.dc.html": {
+      "h": 5860,
+      "is_interactive": true,
+      "page": "home",
+      "title": "Home · Tablet 834",
+      "w": 834,
+      "x": 1520,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 5480,
+      "is_interactive": true,
+      "page": "home",
+      "title": "Home · Desktop 1440",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Shop-Desktop.dc.html": {
+      "h": 2950,
+      "is_interactive": true,
+      "page": "shop",
+      "title": "Shop · Desktop 1440",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Shop-Mobile.dc.html": {
+      "h": 3590,
+      "is_interactive": true,
+      "page": "shop",
+      "title": "Shop · Mobile 390",
+      "w": 390,
+      "x": 2434,
+      "y": 0
+    },
+    "Shop-Tablet.dc.html": {
+      "h": 3590,
+      "is_interactive": true,
+      "page": "shop",
+      "title": "Shop · Tablet 834",
+      "w": 834,
+      "x": 1520,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-25T23:35:44Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "page": "home",
+    "view": "canvas"
+  },
+  "notes": {
+    "t_about": {
+      "kind": "title1",
+      "maxW": 2824,
+      "page": "about",
+      "text": "About",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t_contact": {
+      "kind": "title1",
+      "maxW": 2824,
+      "page": "contact",
+      "text": "Contact",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t_deals": {
+      "kind": "title1",
+      "maxW": 2824,
+      "page": "deals",
+      "text": "Deals",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t_home": {
+      "kind": "title1",
+      "maxW": 2824,
+      "page": "home",
+      "text": "Home",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t_parts": {
+      "kind": "title1",
+      "maxW": 1440,
+      "page": "parts",
+      "text": "Shared header and footer",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t_shop": {
+      "kind": "title1",
+      "maxW": 2824,
+      "page": "shop",
+      "text": "Shop",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Home-Tablet.dc.html",
+    "Home-Mobile.dc.html",
+    "Shop-Desktop.dc.html",
+    "Shop-Tablet.dc.html",
+    "Shop-Mobile.dc.html",
+    "Deals-Desktop.dc.html",
+    "Deals-Tablet.dc.html",
+    "Deals-Mobile.dc.html",
+    "About-Desktop.dc.html",
+    "About-Tablet.dc.html",
+    "About-Mobile.dc.html",
+    "Contact-Desktop.dc.html",
+    "Contact-Tablet.dc.html",
+    "Contact-Mobile.dc.html",
+    "Header.dc.html",
+    "Footer.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "name": "Home"
+    },
+    {
+      "id": "shop",
+      "name": "Shop"
+    },
+    {
+      "id": "deals",
+      "name": "Deals"
+    },
+    {
+      "id": "about",
+      "name": "About"
+    },
+    {
+      "id": "contact",
+      "name": "Contact"
+    },
+    {
+      "id": "parts",
+      "name": "Header & Footer"
+    }
+  ],
+  "title": "Boardgames & Cardgames Kenya Website"
+}

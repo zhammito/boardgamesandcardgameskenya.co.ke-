@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site header</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Caveat:wght@600&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+</helmet>
+<header class="header header--{{size}}">
+<div class="announce">
+<span class="announce-item">Same-day delivery in Nairobi</span>
+<span class="dot announce-extra"></span>
+<span class="announce-item announce-extra">Delivery across Kenya</span>
+<span class="dot announce-extra"></span>
+<span class="announce-item announce-extra">Pay with M-Pesa or card</span>
+</div>
+<div class="nav-bar">
+<a class="brand" href="{{links.home}}">
+<img class="brand-logo" src="./img/1855bf99-image.jpg" alt="Boardgames and Cardgames Kenya logo">
+<span class="brand-text">
+<span class="brand-name">Boardgames &amp; Cardgames</span>
+<span class="brand-place">Kenya</span>
+</span>
+</a>
+<nav class="nav" aria-label="Main">
+<a class="{{cls.home}}" href="{{links.home}}">Home</a>
+<a class="{{cls.shop}}" href="{{links.shop}}">Shop</a>
+<a class="{{cls.deals}}" href="{{links.deals}}">Deals</a>
+<a class="{{cls.about}}" href="{{links.about}}">About</a>
+<a class="{{cls.contact}}" href="{{links.contact}}">Contact</a>
+</nav>
+<div class="nav-actions">
+<button class="icon-button header-search" type="button" aria-label="Search games">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+</button>
+<a class="button-primary header-whatsapp" href="https://wa.me/254727997511">
+<svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg>
+Order on WhatsApp
+</a>
+<a class="icon-button" href="{{links.shop}}" aria-label="Cart">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L20 8H6"></path><circle cx="9" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle></svg>
+</a>
+<button class="icon-button menu-button" type="button" aria-label="Open menu">
+<span class="menu-line"></span>
+<span class="menu-line"></span>
+<span class="menu-line"></span>
+</button>
+</div>
+</div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"size":{"editor":"enum","options":["desktop","tablet","mobile"],"default":"desktop"},"active":{"editor":"enum","options":["home","shop","deals","about","contact"],"default":"home"},"$preview":{"width":1440,"height":111}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const size = this.props.size ?? 'desktop';
+    const active = this.props.active ?? 'home';
+    const suffix = size === 'tablet' ? 'Tablet' : size === 'mobile' ? 'Mobile' : 'Desktop';
+    const links = {
+      home: size === 'desktop' ? 'Main.dc.html' : 'Home-' + suffix + '.dc.html',
+      shop: 'Shop-' + suffix + '.dc.html',
+      deals: 'Deals-' + suffix + '.dc.html',
+      about: 'About-' + suffix + '.dc.html',
+      contact: 'Contact-' + suffix + '.dc.html'
+    };
+    const cls = {};
+    ['home', 'shop', 'deals', 'about', 'contact'].forEach((k) => {
+      cls[k] = k === active ? 'nav-link nav-link--active' : 'nav-link';
+    });
+    return { size, links, cls };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site footer</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Caveat:wght@600&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+</helmet>
+<footer class="footer footer--{{size}}">
+<div class="footer-top">
+<div class="footer-brand">
+<img class="footer-logo" src="./img/1855bf99-image.jpg" alt="Boardgames and Cardgames Kenya logo">
+<p class="footer-lede">Brand-new, sealed board games and card games, sent out from Nairobi to wherever you are in Kenya.</p>
+<p class="hand-note">More than games</p>
+</div>
+<div class="footer-cols">
+<div class="footer-col">
+<p class="footer-heading">Shop</p>
+<a class="footer-link" href="{{links.shop}}">Board Games</a>
+<a class="footer-link" href="{{links.shop}}">Card Games</a>
+<a class="footer-link" href="{{links.shop}}">Party &amp; Drinking Games</a>
+<a class="footer-link" href="{{links.shop}}">Couples &amp; Date Night</a>
+<a class="footer-link" href="{{links.deals}}">Deals</a>
+</div>
+<div class="footer-col">
+<p class="footer-heading">The shop</p>
+<a class="footer-link" href="{{links.about}}">About us</a>
+<a class="footer-link" href="{{links.contact}}">Delivery and pickup</a>
+<a class="footer-link" href="{{links.contact}}">Contact</a>
+</div>
+<div class="footer-col">
+<p class="footer-heading">Talk to us</p>
+<a class="footer-link" href="tel:+254727997511">0727 997511</a>
+<a class="footer-link" href="tel:+254793002414">0793 002414</a>
+<a class="footer-link" href="mailto:boardgamesandcardgames@gmail.com">boardgamesandcardgames@gmail.com</a>
+<span>Nairobi, Kenya</span>
+</div>
+</div>
+</div>
+<div class="footer-pay">
+<span>Pay with</span>
+<span class="pay-chip"><span class="dot"></span>M-Pesa</span>
+<span class="pay-chip"><span class="dot"></span>Card</span>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Boardgamesandcardgames Kenya</p>
+<p>Drinking and couples games are for adults 18 and over.</p>
+</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"size":{"editor":"enum","options":["desktop","tablet","mobile"],"default":"desktop"},"$preview":{"width":1440,"height":477}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const size = this.props.size ?? 'desktop';
+    const suffix = size === 'tablet' ? 'Tablet' : size === 'mobile' ? 'Mobile' : 'Desktop';
+    const links = {
+      home: size === 'desktop' ? 'Main.dc.html' : 'Home-' + suffix + '.dc.html',
+      shop: 'Shop-' + suffix + '.dc.html',
+      deals: 'Deals-' + suffix + '.dc.html',
+      about: 'About-' + suffix + '.dc.html',
+      contact: 'Contact-' + suffix + '.dc.html'
+    };
+    return { size, links };
+  }
+}
+</script>
+</body>
+</html>
