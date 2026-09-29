@@ -1,0 +1,18 @@
+[
+ ["Zone A: Within CBD", 100],
+ ["Pick Up Mtaani agent drop-off (write your location and preferred agent in the order note)", 140],
+ ["Super Metro: Thika, Kikuyu, Ruiru, Juja, Ngong, Kitengela etc.", 250],
+ ["Zone B: Upperhill, Valley Road, Community, Hurlingham, Nairobi Hospital, Pangani, Ngara, KNH, Ojijo Road etc.", 300],
+ ["Zone C: Riverside, Westlands, ABC, Kilimani, Kileleshwa, Westgate, General Mathenge, Parklands, MP Shah, Aga Khan, Oshwal etc.", 350],
+ ["Zone E: South B/C, Mbagathi, Madaraka, Nairobi West, Lang'ata, Carnivore, Bellevue, NextGen Mall, Panari, Imara etc.", 350],
+ ["Zone J: Roasters, Mountain Mall, Garden City, TRM, Lumumba Drive, USIU, Ngumba etc.", 350],
+ ["Zone D: Kangemi, Loresho, Mountain View, Spring Valley, Lower Kabete, Industrial Area", 400],
+ ["Zone F: Junction Mall, Lavington, Kibra, Dagoretti Corner, Kawangware, Wanyee etc.", 400],
+ ["Zone N: Donholm, Uhuru Estate, Buruburu, Fedha, Tassia, Savannah, Pipeline, Mtindwa, Lucky Summer", 400],
+ ["Zone G: Ruaka, Runda, Nyari, Gigiri, UNEP, Mucatha, Thindigua, Muthaiga North, Fourways, Ridgeways, Komarock etc.", 450],
+ ["Zone M: Mirema, Kahawa Sukari, Zimmerman, Githurai, Kahawa West, Kahawa Wendani, Clayworks etc.", 450],
+ ["Zone H: Gateway Mall, Syokimau and nearby", 600],
+ ["Zone L: Nakuru, Mombasa, Eldoret, Kisumu", 350],
+ ["Zone S: Kakamega, Kitale, Bungoma, Busia, Kericho, Kisii, Migori, Homa Bay, Nyeri, Meru, Embu, Machakos, Naivasha, Nanyuki, Malindi, Kilifi, Narok etc.", 350],
+ ["Zone K: Other towns outside Nairobi (write your town and preferred courier in the order note)", 350]
+]
