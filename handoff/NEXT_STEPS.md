@@ -14,6 +14,10 @@ Everything below is still to do. The site is built, published, and fast. Emails 
 - Shop email is boardgamescardgames@gmail.com everywhere. WP Mail SMTP uses Other SMTP (admin@ mailbox, SSL 465).
 - Paystack: test mode, working (test orders #456 and #457). Live keys not yet entered.
 
+## Done since the first handoff
+- Steps 1–4 below are complete: shipping zone "Kenya" (id 1) with 17 flat rates including free HQ pickup, `bgck-free-delivery.php` installed, wording updated (65 posts, 71 meta fields), policy page published (page 459, /returns-refunds-delivery/), footer and Contact page updated with the pickup address.
+- Hidden, virtual KSh 10 product for the live payment test: id 464, /product/payment-test-item/. Delete it after the live test.
+
 ## To do next
 1. **Delivery zones.** Create one WooCommerce shipping zone "Kenya" (country KE). Add:
    - a flat rate for each line in `delivery-rates.json` (title, cost in KSh)
