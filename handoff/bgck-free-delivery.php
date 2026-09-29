@@ -25,7 +25,7 @@ add_filter( 'woocommerce_package_rates', function ( $rates, $package ) {
 		}
 		$rate->set_cost( 0 );
 		$rate->set_taxes( array() );
-		$rate->set_label( $rate->get_label() . ' (FREE on orders over KSh 5,000)' );
+		$rate->set_label( $rate->get_label() . ' (FREE on orders of KSh 5,000 or more)' );
 	}
 	return $rates;
 }, 20, 2 );
