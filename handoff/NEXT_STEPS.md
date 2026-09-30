@@ -28,6 +28,8 @@ Everything below is still to do. The site is built, published, and fast. Emails 
   - Old static Shop data backed up in page 209 meta `_bgck_shop_static_backup`.
   - To choose a product's section: set its primary category ("Make primary" in the product's category box).
 
+- mu-plugin `bgck-image-optimizer.php` (30 Sep): every upload is auto-oriented, stripped, resized to ≤1600px and saved as WebP ≤400 KB; transparent PNGs stay PNG. Server Imagick has no HEIC support.
+
 ## To do next
 1. **Delivery zones.** Create one WooCommerce shipping zone "Kenya" (country KE). Add:
    - a flat rate for each line in `delivery-rates.json` (title, cost in KSh)
