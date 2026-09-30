@@ -21,7 +21,7 @@ Everything below is still to do. The site is built, published, and fast. Emails 
 - Host raised OPcache to 1 GB / 25,000 files; cart ~1.2-1.6 s, checkout ~2 s.
 
 - SEO fixes (30 Sep): mu-plugin `bgck-product-schema.php` (Product schema name = product name, brand from product_brand); Rank Math `pt_product_default_snippet_name` = %title%; brands set on 18 products (Mattel, Hasbro, Kosmos, Skillmatics, BestSelf, Our Moments, These Cards Will Get You Drunk); category descriptions written; Home meta description 154 chars.
-- Shop page (/games/) is now AUTOMATIC (30 Sep): each of the 6 sections is an Elementor v4 atomic Loop (e-collection-loop, template_type product) filtered by the private `bgck_shelf` taxonomy. PRO Elements plugin is active (unlocks atomic Loop); the original Elementor Pro plugin is deactivated (unlicensed).
+- Shop page (/games/) is now AUTOMATIC (30 Sep): each of the 6 sections is an Elementor v4 atomic Loop (e-collection-loop, template_type product) filtered by the private `bgck_shelf` taxonomy. PRO Elements plugin is active (unlocks atomic Loop); the original (unlicensed) Elementor Pro plugin was deleted on 30 Sep; it had no uninstall routine, so settings were kept.
   - mu-plugin `bgck-shop-sync.php`: assigns each product's shelf from its Rank Math primary category (else first matching section), stores `bgck_cart_url`, `bgck_whatsapp_url`, `bgck_adult_label` on products, stores section counts on page 209 (`bgck_count_*`, shown via post-custom-field), and purges Shop/Home cache on product changes.
   - Global class `tag-adult` has custom CSS `&:empty { display: none; }` (approved by owner) so the 18+ chip hides on non-adult games.
   - Old static Shop data backed up in page 209 meta `_bgck_shop_static_backup`.
