@@ -20,6 +20,9 @@ Everything below is still to do. The site is built, published, and fast. Emails 
 - Paystack is LIVE (test mode off). Live KSh 10 test passed on 30 Sep 2026. All test orders and the KSh 10 test product were deleted; the shop starts with 0 orders.
 - Host raised OPcache to 1 GB / 25,000 files; cart ~1.2-1.6 s, checkout ~2 s.
 
+- SEO fixes (30 Sep): mu-plugin `bgck-product-schema.php` (Product schema name = product name, brand from product_brand); Rank Math `pt_product_default_snippet_name` = %title%; brands set on 18 products (Mattel, Hasbro, Kosmos, Skillmatics, BestSelf, Our Moments, These Cards Will Get You Drunk); category descriptions written; Home meta description 154 chars.
+- Note: the Shop page (/games/) is hand-built (57 static cards with dynamic price tags). New products do not appear there automatically.
+
 ## To do next
 1. **Delivery zones.** Create one WooCommerce shipping zone "Kenya" (country KE). Add:
    - a flat rate for each line in `delivery-rates.json` (title, cost in KSh)
