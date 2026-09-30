@@ -17,7 +17,8 @@ Everything below is still to do. The site is built, published, and fast. Emails 
 ## Done since the first handoff
 - Steps 1–4 below are complete: shipping zone "Kenya" (id 1) with 17 flat rates including free HQ pickup, `bgck-free-delivery.php` installed, wording updated (65 posts, 71 meta fields), policy page published (page 459, /returns-refunds-delivery/), footer and Contact page updated with the pickup address.
 - Privacy Policy published (page 3, /privacy-policy/), set as the WordPress privacy page and linked in the footer.
-- Hidden, virtual KSh 10 product for the live payment test: id 464, /product/payment-test-item/. Delete it after the live test.
+- Paystack is LIVE (test mode off). Live KSh 10 test passed on 30 Sep 2026. All test orders and the KSh 10 test product were deleted; the shop starts with 0 orders.
+- Host raised OPcache to 1 GB / 25,000 files; cart ~1.2-1.6 s, checkout ~2 s.
 
 ## To do next
 1. **Delivery zones.** Create one WooCommerce shipping zone "Kenya" (country KE). Add:
