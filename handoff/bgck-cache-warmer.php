@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: BGCK Cache Warmer
- * Description: Keeps the LiteSpeed page cache warm. Every 10 minutes it re-checks the key pages and a few product pages, so visitors get cached copies instead of waiting for WordPress to build each page.
- * Version: 1.0
+ * Description: Keeps the LiteSpeed page cache warm. Every 10 minutes it re-checks the key pages and a few category pages in rotation, so visitors get cached copies instead of waiting for WordPress to build each page. Product pages are cached on their first visit.
+ * Version: 1.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,7 @@ add_action( 'bgck_warm_cache', 'bgck_warm_cache_run' );
 /** Pages checked on every run (cheap when already cached). */
 function bgck_warm_cache_key_urls() {
 	$urls = array( home_url( '/' ) );
-	foreach ( array( 209, 211, 213, 215 ) as $page_id ) {
+	foreach ( array( 209, 211, 213, 215, 459, 3 ) as $page_id ) {
 		$url = get_permalink( $page_id );
 		if ( $url ) {
 			$urls[] = $url;
@@ -34,20 +34,9 @@ function bgck_warm_cache_key_urls() {
 	return $urls;
 }
 
-/** Products and categories, warmed a few at a time in rotation. */
+/** Category pages (the busiest listings once the catalogue grows), warmed a few at a time in rotation. */
 function bgck_warm_cache_rotating_urls() {
-	$urls = array();
-	$ids  = get_posts( array(
-		'post_type'   => 'product',
-		'post_status' => 'publish',
-		'numberposts' => -1,
-		'fields'      => 'ids',
-		'orderby'     => 'ID',
-		'order'       => 'ASC',
-	) );
-	foreach ( $ids as $id ) {
-		$urls[] = get_permalink( $id );
-	}
+	$urls  = array();
 	$terms = get_terms( array( 'taxonomy' => 'product_cat', 'hide_empty' => true ) );
 	if ( ! is_wp_error( $terms ) ) {
 		foreach ( $terms as $term ) {
