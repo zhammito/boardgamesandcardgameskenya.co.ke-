@@ -31,7 +31,7 @@ Everything below is still to do. The site is built, published, and fast. Emails 
 - mu-plugin `bgck-image-optimizer.php` (30 Sep): every upload is auto-oriented, stripped, resized to ≤1600px and saved as WebP ≤400 KB; transparent PNGs stay PNG. Server Imagick has no HEIC support.
 
 - Scaling for a large catalogue (30 Sep): Shop page Loops show 8 per section plus a "See all …" link (cloned Home arrow link) to each category page. Theme Builder product archive template (post 488, condition include/product_archive) renders category, tag, brand and product search pages: dynamic archive title and description, category chips, Loop with product_source current_query, 24 per page, prev/next pagination (?e-page-<loopid>=N) and an empty state. Astra shop-no-of-products = 24. Sync plugin v1.3 stores `bgck_card_label` (chip text). Cache warmer v1.1 rotates category pages instead of products.
-- Header "Search" icon still links to /games/. The atomic form cannot submit a GET search, so a real search box needs a non-atomic widget or custom code (owner to decide).
+- Header search (30 Sep, owner-approved exception to the atomic-only rule): the header "Search" atomic link was replaced by Elementor Pro's classic `search-form` widget, full_screen skin, styled in its own settings to match icon-button (#efe6fb bg, #1a0833 icon, #ffd45c hover, 44px pill). Shown on all devices. mu-plugin `bgck-product-search.php` limits front-end searches to products, so results use the archive template.
 
 1. **Delivery zones.** Create one WooCommerce shipping zone "Kenya" (country KE). Add:
    - a flat rate for each line in `delivery-rates.json` (title, cost in KSh)
