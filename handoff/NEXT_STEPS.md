@@ -24,6 +24,7 @@ Everything below is still to do. The site is built, published, and fast. Emails 
 - Shop page (/games/) is now AUTOMATIC (30 Sep): each of the 6 sections is an Elementor v4 atomic Loop (e-collection-loop, template_type product) filtered by the private `bgck_shelf` taxonomy. PRO Elements plugin is active (unlocks atomic Loop); the original (unlicensed) Elementor Pro plugin was deleted on 30 Sep; it had no uninstall routine, so settings were kept.
   - mu-plugin `bgck-shop-sync.php`: assigns each product's shelf from its Rank Math primary category (else first matching section), stores `bgck_cart_url`, `bgck_whatsapp_url`, `bgck_adult_label` on products, stores section counts on page 209 (`bgck_count_*`, shown via post-custom-field), and purges Shop/Home cache on product changes.
   - Global class `tag-adult` has custom CSS `&:empty { display: none; }` (approved by owner) so the 18+ chip hides on non-adult games.
+  - Layout classes: `product-loop` (padding 0, on each Loop), `product-loop-item` (padding 0, grid, 4/3/2 per row desktop/tablet/mobile, on each Loop item). `product-img` is square on mobile. Existing products have staggered post dates so "newest first" keeps the original curated order.
   - Old static Shop data backed up in page 209 meta `_bgck_shop_static_backup`.
   - To choose a product's section: set its primary category ("Make primary" in the product's category box).
 
