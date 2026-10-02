@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BGCK Shop Sync
  * Description: Keeps the automatic Shop page (/games/) in step with WooCommerce. Stores each product's add-to-cart and WhatsApp order links for the Loop cards, keeps the per-section game counts current, and refreshes the cached Shop and Home pages whenever a product changes.
- * Version: 1.5
+ * Version: 1.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,6 +28,7 @@ function bgck_shop_sections() {
 		'bgck_count_couples'        => 30,
 		'bgck_count_kids_family'    => 28,
 		'bgck_count_jigsaw'         => 32,
+		'bgck_count_outdoor_sports' => 53,
 	);
 }
 
@@ -70,6 +71,7 @@ function bgck_shop_assign_shelf( $product_id ) {
 		30 => 'Couples',
 		28 => 'Kids & family',
 		32 => 'Puzzle',
+		53 => 'Outdoor & sports',
 	);
 	if ( $shelf ) {
 		$label = $labels[ $shelf ];
