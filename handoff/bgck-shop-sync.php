@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BGCK Shop Sync
  * Description: Keeps the automatic Shop page (/games/) in step with WooCommerce. Stores each product's add-to-cart and WhatsApp order links for the Loop cards, keeps the per-section game counts current, and refreshes the cached Shop and Home pages whenever a product changes.
- * Version: 1.4
+ * Version: 1.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,8 @@ const BGCK_WHATSAPP     = '254727997511';
 /**
  * Shop page sections in display order: count meta key => product_cat term ID.
  * Each product sits in exactly one section (its "shelf"): its Rank Math primary
- * category when that is one of these, otherwise the first of these it belongs to.
+ * category when that is one of these, otherwise the first of these it belongs to
+ * (Board Games last, as it is the broadest).
  */
 function bgck_shop_sections() {
 	return array(
@@ -52,7 +53,8 @@ function bgck_shop_assign_shelf( $product_id ) {
 	if ( $primary && in_array( $primary, $sections, true ) && in_array( $primary, $cats, true ) ) {
 		$shelf = $primary;
 	} else {
-		foreach ( $sections as $term_id ) {
+		// Board Games is the broadest section, so a more specific one wins and it is only the fallback.
+		foreach ( array_merge( array_diff( $sections, array( 31 ) ), array( 31 ) ) as $term_id ) {
 			if ( in_array( $term_id, $cats, true ) ) {
 				$shelf = $term_id;
 				break;
