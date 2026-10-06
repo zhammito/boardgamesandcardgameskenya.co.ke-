@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: BGCK Shop Sync
- * Description: Keeps the automatic Shop page (/games/) in step with WooCommerce. Stores each product's add-to-cart and WhatsApp order links for the Loop cards, keeps the per-section game counts current, and refreshes the cached Shop and Home pages whenever a product changes.
- * Version: 1.6
+ * Description: Keeps the automatic Shop page (/games/) in step with WooCommerce. Hides products that have no photo or no price until they are complete. Stores each product's add-to-cart and WhatsApp order links for the Loop cards, keeps the per-section game counts current, and refreshes the cached Shop and Home pages whenever a product changes.
+ * Version: 1.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -141,8 +141,37 @@ function bgck_shop_refresh_pages() {
 	do_action( 'litespeed_purge_post', BGCK_HOME_PAGE_ID );
 }
 
+/**
+ * A product without a photo or a price is kept out of the shop, categories and search
+ * (catalog visibility "hidden") and comes back on its own once both are set. Only products
+ * this function hid are brought back, so a product hidden by hand stays hidden.
+ */
+function bgck_shop_apply_completeness( $product_id ) {
+	$product = wc_get_product( $product_id );
+	if ( ! $product ) {
+		return;
+	}
+	$image    = $product->get_image_id() ? get_attached_file( $product->get_image_id() ) : '';
+	$complete = $image && file_exists( $image ) && '' !== $product->get_price();
+	$auto     = (bool) get_post_meta( $product_id, '_bgck_auto_hidden', true );
+	$terms    = wp_get_post_terms( $product_id, 'product_visibility', array( 'fields' => 'slugs' ) );
+	$hidden   = array( 'exclude-from-catalog', 'exclude-from-search' );
+
+	if ( ! $complete && ! array_intersect( $hidden, $terms ) ) {
+		// Set the terms directly rather than $product->save(), which would re-run this hook.
+		wp_set_object_terms( $product_id, array_values( array_unique( array_merge( $terms, $hidden ) ) ), 'product_visibility' );
+		update_post_meta( $product_id, '_bgck_auto_hidden', 1 );
+		wc_delete_product_transients( $product_id );
+	} elseif ( $complete && $auto ) {
+		wp_set_object_terms( $product_id, array_values( array_diff( $terms, $hidden ) ), 'product_visibility' );
+		delete_post_meta( $product_id, '_bgck_auto_hidden' );
+		wc_delete_product_transients( $product_id );
+	}
+}
+
 function bgck_shop_sync_all() {
 	foreach ( wc_get_products( array( 'status' => 'any', 'limit' => -1, 'return' => 'ids' ) ) as $id ) {
+		bgck_shop_apply_completeness( $id );
 		bgck_shop_update_product_links( $id );
 		bgck_shop_assign_shelf( $id );
 	}
@@ -152,6 +181,7 @@ function bgck_shop_sync_all() {
 add_action( 'woocommerce_new_product', 'bgck_shop_on_change' );
 add_action( 'woocommerce_update_product', 'bgck_shop_on_change' );
 function bgck_shop_on_change( $product_id ) {
+	bgck_shop_apply_completeness( $product_id );
 	bgck_shop_update_product_links( $product_id );
 	bgck_shop_assign_shelf( $product_id );
 	bgck_shop_refresh_pages();
